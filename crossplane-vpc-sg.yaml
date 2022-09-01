@@ -1,0 +1,19 @@
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: SecurityGroup
+metadata:
+  name: ec2-crossplane-security-group
+spec:
+  forProvider:
+    vpcId: vpc-41a80a3b
+    groupName: ec2-crossplane-security-group
+    description: test access to crossplane workload
+    region: us-east-1
+    ingress:
+      - fromPort: 22
+        toPort: 22
+        ipProtocol: tcp
+        ipRanges:
+          - cidrIp: 192.238.23.22/32
+            description: all ips
+  providerRef:
+    name: aws-provider
