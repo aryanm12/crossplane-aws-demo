@@ -78,3 +78,8 @@ Create Postgres RDS instance:
 -----------------------------
 
 kubectl apply -f crossplane-postgres.yaml
+
+Create VPC SG:
+--------------
+
+kubectl apply -f 
